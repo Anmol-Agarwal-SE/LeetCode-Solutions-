@@ -4,5 +4,10 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        s=s.split()
-        return len(s[-1])
+        l=0
+        for i in reversed(range(len(s))):
+            if s[i]!=" ":
+                l+=1
+            elif l>0:
+                return l
+        return l
